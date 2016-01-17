@@ -1,0 +1,37 @@
+user enters value
+// 
+// user clicks F to C
+//  initialVal = get value of input
+//  resultVal = use formula of F to C to convert initialVal to C
+//  
+//  if initialVal is blank
+//    display error
+//  else (if not blank)
+//    display resultVal in #result
+// 
+// user clicks C to F
+//  initialVal = get value of input
+//  resultVal = use formula of C to F to convert initialVal to F
+//  display resultVal in #result
+//  
+//  SUPER BONUS FUN ZONE
+//  display error if input is blank
+
+scrap paper
+when the user clicks F to C
+run value to convert F to C 
+$(#farenheit_to_celsius).on('click', function() {
+	var temp = $(#)
+
+-----
+when the user clicks C to F
+run value to convert C to F (number * 1.8 + 32)
+
+if both fields are not filled
+show an error message
+
+});
+
+To convert Celsius to Farenheit, 
+
+To convert Celsius to Fahrenheit, multiply by 1.8 (or 9/5) and add 32.

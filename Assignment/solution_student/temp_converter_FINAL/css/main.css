@@ -1,0 +1,64 @@
+html {
+  height: 100%;
+}
+body {
+  padding: 20px;
+  text-align: center;
+  background-image: linear-gradient(-225deg, #45B4FE 0%, #F73740 100%);
+}
+
+h1 {
+  font-family: Georgia, serif;
+}
+
+.converter-container {
+  width: 340px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  margin-top: 100px;
+  border-radius: 3px;
+  border: 2px solid #F2F6F5;
+}
+
+input {
+  margin-right: 10px;
+  padding: 10px;
+  border: 2px solid #dfdfdf;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #afafaf;
+  outline: none;
+}
+
+button {
+  font-size: 14px;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background: #9F75A0;
+  cursor: pointer;
+}
+
+/* Error styles
+   ================================================================ */
+
+/* This class shoud be added to the input if the user has not entered a value */
+.error {
+  border-color: red;
+}
+
+/* This error message should fade in if the user has not entered a value */
+.error-message {
+  color: white;
+  border: 2px solid #F13A44;
+  border-radius: 3px;
+  display: none; /*Hidden by default*/
+  background-color: rgba(255, 0, 0, .6);
+  padding: 1px;
+}
+
