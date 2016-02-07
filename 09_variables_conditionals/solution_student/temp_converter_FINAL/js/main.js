@@ -9,22 +9,15 @@ $('#fahrenheit_to_celsius').on('click', function(){
 	var initialVal = $('#temperature').val();
 	var resultVal = (parseFloat(initialVal) - 32) / 1.8;
 
+	changeBackground(initialVal);
+
 	if (isNaN(resultVal)){
 		$('#result').addClass('error');
 		$('.error-message').html('<p>Please enter a numerical value</p>');
 		$('.error-message').fadeIn(200);
 
 		} else {
-		$('#result').html(resultVal + '° Celsius');
-			if (resultVal > 93) {
-				$('body').css('background-image', 'linear-gradient(-218deg, #45B4FE 0%, #F73740 5%');
-			}else if (resultVal > 37) {
-				$('body').css('background-image', 'linear-gradient(-218deg, #45B4FE 0%, #F73740 60%');
-			}else if (resultVal < 1) {
-				$('body').css('background-image', 'linear-gradient(-218deg, #45B4FE 40%, #F73740 100%');
-			}else if (resultVal < -73) {
-				$('body').css('background-image', 'linear-gradient(-215deg, #45B4FE 80%, #F73740 100%');
-			}
+		$('#result').html(resultVal + 'Â° Celsius');
 	}
 })
 
@@ -36,22 +29,15 @@ $('#celsius_to_fahrenheit').on('click', function (){
 	var initialVal = $('#temperature').val();
 	var resultVal = (parseFloat(initialVal) * 1.8) + 32;
 
+	changeBackground(resultVal);
+
 	if (isNaN(resultVal)){
 		$('#result').addClass('error');
 		$('.error-message').html('<p>Please enter a numerical value</p>');
 		$('.error-message').fadeIn(200);
 
 		} else {
-		$('#result').html(resultVal + '° Fahrenheit');
-			if (resultVal > 200) {
-				$('body').css('background-image', 'linear-gradient(-218deg, #45B4FE 0%, #F73740 5%');
-			}else if (resultVal > 80) {
-				$('body').css('background-image', 'linear-gradient(-218deg, #45B4FE 0%, #F73740 60%');
-			}else if (resultVal > 0) {
-				$('body').css('background-image', 'linear-gradient(-218deg, #45B4FE 40%, #F73740 100%');
-			}else if (resultVal < -100) {
-				$('body').css('background-image', 'linear-gradient(-215deg, #45B4FE 80%, #F73740 100%');
-			}
+		$('#result').html(resultVal + 'Â° Fahrenheit');
 	}
 });
  
@@ -60,7 +46,14 @@ $('#temperature').on('focus', function (){
 	$('#result').html('');
 })
 
-
-
-
-
+function changeBackground(resultVal, cOrF) {
+	if (resultVal >= 100) {
+		$('body').css('background-position-x', '100%');
+	}else if (resultVal >= 80 && resultVal < 100) {
+		$('body').css('background-position-x', '50%');
+	}else if (resultVal >= 40 && resultVal < 80) {
+		$('body').css('background-position-x', '25%');
+	}else if (resultVal < 40) {
+		$('body').css('background-position-x', '0');
+	}
+}
